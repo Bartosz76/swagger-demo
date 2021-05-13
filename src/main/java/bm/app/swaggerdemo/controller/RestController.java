@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @org.springframework.web.bind.annotation.RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api")
 public class RestController {
 
     private PokemonRepo pokemonRepo;
@@ -19,7 +19,7 @@ public class RestController {
 
     @GetMapping("/hello")
     public String helloPage() {
-        return "Hello!";
+        return "Hello! Welcome to Pokemon API!";
     }
 
     @PostMapping("/post/{name}/{type}/{powerLevel}")

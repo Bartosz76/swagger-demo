@@ -2,6 +2,8 @@ package bm.app.swaggerdemo.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
@@ -12,6 +14,8 @@ public class SwaggerConfiguration {
     public Docket docks(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
+                .paths(PathSelectors.ant("/api/*"))
+                .apis(RequestHandlerSelectors.basePackage("bm.app.swaggerdemo"))
                 .build();
     }
 
