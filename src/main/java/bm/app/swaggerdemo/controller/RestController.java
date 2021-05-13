@@ -1,6 +1,7 @@
 package bm.app.swaggerdemo.controller;
 
 import bm.app.swaggerdemo.model.Pokemon;
+import bm.app.swaggerdemo.repository.PokemonRepo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -9,6 +10,12 @@ import java.util.List;
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping("/api/v1")
 public class RestController {
+
+    private PokemonRepo pokemonRepo;
+
+    public RestController(PokemonRepo pokemonRepo) {
+        this.pokemonRepo = pokemonRepo;
+    }
 
     @GetMapping("/hello")
     public String helloPage() {
@@ -19,15 +26,13 @@ public class RestController {
     public Pokemon addPokemon(@PathVariable String name,
                               @PathVariable String type,
                               @PathVariable int powerLevel) {
+        Pokemon pokemon = new Pokemon(name, type, powerLevel);
+        pokemonRepo.addAPokemonToList(pokemon);
         return new Pokemon(name, type, powerLevel);
     }
 
     @GetMapping("/getPokemon")
     public List<Pokemon> getAFewPokemon() {
-        return Arrays.asList(
-                new Pokemon("Cyndaquil", "Fire", 10),
-                new Pokemon("Pikachu", "Electric", 12),
-                new Pokemon("Lucario", "Fighting/Steel", 30)
-        );
+        return pokemonRepo.getPokemonList();
     }
 }

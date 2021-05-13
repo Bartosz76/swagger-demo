@@ -1,0 +1,35 @@
+id : 606d41d034bec4d34ada4c11
+index : 0
+guild : 96432b92-7d2e-4ee9-b593-70525d39b37b
+isActive : false
+balance: $3,233.98
+picture : http://placehold.it/32x32
+age : 32
+eyeColor : blue
+name : Anthony York
+gender : male
+company TOURMANIA
+email : anthonyyork@tourmania.com
+phone : +1 (972) 588-3828
+address : 312 Fulton Street, Cade, Michigan, 8901
+about : A Dummy API for YAML Practice
+registered : 2014-12-27T09:16:03 -06:-30
+latitude : -12.333243
+longitude : -64.614969
+tags :
+ - sunt
+ - culpa
+ - aliqua
+ - velit
+ - do
+ - proident
+ - elit
+friends :
+ - id : 0
+   name : Berry
+ - id : 1
+   name Cabrera Bradshaw
+ - id : 2
+   name : Joan Puckett
+greeting : Hello, Anthony York! You have 7 unread messages.
+favoriteFruit : apple
