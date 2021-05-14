@@ -10,6 +10,8 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 import java.util.Collections;
 
+import static springfox.documentation.builders.PathSelectors.regex;
+
 @Configuration
 public class SwaggerConfiguration {
 
@@ -17,8 +19,8 @@ public class SwaggerConfiguration {
     public Docket docks(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-//                .paths(PathSelectors.ant("/api/*")) // Prevents @Post method from being included?
                 .apis(RequestHandlerSelectors.basePackage("bm.app.swaggerdemo"))
+                .paths(regex("/api.*"))
                 .build()
                 .apiInfo(apiDetails());
     }
